@@ -29,9 +29,14 @@ def posts():
 def profile():
     #profile = User.query.get_or_404(current_user(username)) #!!!!!!!!!?!!?!?!?!?!?!?!?!?!?!??!!?!?!?!?!?!
     profile = User.query.filter_by(username=current_user.username).first()
+    company = profile.company
+    website = profile.website
+    location = profile.location
     month = profile.date.month
     year = profile.date.year
-    return render_template("profile.html", title="profile", current_user=current_user, profile=profile, month=month, year=year)
+    about = profile.about_me
+    return render_template("profile.html", title="profile", current_user=current_user, month=month, year=year, company=company, website=website, \
+        location=location, about=about)
 
 @app.route("/news")
 @login_required
@@ -96,5 +101,5 @@ def edit_profile():
         form.website.data = current_user.website
         form.location.data = current_user.location
         form.company.data = current_user.company
-    return render_template('edit_profile.html', title='Edit Profile',
+    return render_template('edit_profile.html', title='edit profile',
                            form=form)

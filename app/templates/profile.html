@@ -10,25 +10,25 @@
                 <div class="text mt-3 justify-content-center align-items-center">USERNAME<br><span>{{current_user.username}}</span></div>
                 <div class="text mt-3 justify-content-center align-items-center">EMAIL<br><span>{{current_user.email}}</span></div>
 
-                {% if profile.about_me == '' %}
+                {% if about == '' or about == None%}
                 <div class="text mt-3 justify-content-center align-items-center">BIO<br><span>Yet is no information about you</span></div>
                 {% else %}
-                <div class="text mt-3 justify-content-center align-items-center">BIO<br><span>{{current_user.about_me}}</span></div>
+                <div class="text mt-3 justify-content-center align-items-center">BIO<br><span>{{about}}</span></div>
                 {% endif %}
 
-                {% if profile.company == '' %}
+                {% if company == '' or company == None %}
                 <div class="text mt-3 justify-content-center align-items-center">COMPANY<br><span>Yet is no information about company you work at</span></div>
                 {% else %}
                 <div class="text mt-3 justify-content-center align-items-center">COMPANY<br><span>{{current_user.company}}</span></div>
                 {% endif %}
 
-                {% if profile.location == '' %}
+                {% if location == '' or location == None %}
                 <div class="text mt-3 justify-content-center align-items-center">LOCATION<br><span>Yet is no information about your current location</span></div>
                 {% else %}
                 <div class="text mt-3 justify-content-center align-items-center">LOCATION<br><span>{{current_user.location}}</span></div>
                 {% endif %}
 
-                {% if profile.website == '' %}
+                {% if website == '' or website == None %}
                 <div class="text mt-3 justify-content-center align-items-center">WEBSITE<br><span>Yet is no link to your website</span></div>
                 {% else %}
                 <div class="text mt-3 justify-content-center align-items-center">WEBSITE<br><span>{{current_user.website}}</span></div>
