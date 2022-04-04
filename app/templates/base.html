@@ -19,7 +19,7 @@
 <body class="bg-light">
     {% include 'header.html' %}
     <div class="content">
-        <div class="container">
+        <div class="container mt-5 mb-5 d-flex align-items-center justify-content-center">
             {% with messages = get_flashed_messages(with_categories = True) %}
             {% if messages %}
             {% for category, message in messages %}

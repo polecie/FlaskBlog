@@ -8,30 +8,30 @@
                 <h5 class="mt-3">Account information</h5> <small class="mt-2 text-muted">All fileds are empty for new users, please provide an account information by clicking to <a href="{{ url_for('edit_profile') }}">edit profile</a> here or down below</small>
 
                 <div class="text mt-3 justify-content-center align-items-center">USERNAME<br><span>{{current_user.username}}</span></div>
-                <div class="text mt-3 justify-content-center align-items-center">EMAIL<br><span>{{profile.email}}</span></div>
+                <div class="text mt-3 justify-content-center align-items-center">EMAIL<br><span>{{current_user.email}}</span></div>
 
                 {% if profile.about_me == '' %}
                 <div class="text mt-3 justify-content-center align-items-center">BIO<br><span>Yet is no information about you</span></div>
                 {% else %}
-                <div class="text mt-3 justify-content-center align-items-center">BIO<br><span>{{profile.about_me}}</span></div>
+                <div class="text mt-3 justify-content-center align-items-center">BIO<br><span>{{current_user.about_me}}</span></div>
                 {% endif %}
 
                 {% if profile.company == '' %}
                 <div class="text mt-3 justify-content-center align-items-center">COMPANY<br><span>Yet is no information about company you work at</span></div>
                 {% else %}
-                <div class="text mt-3 justify-content-center align-items-center">COMPANY<br><span>{{profile.company}}</span></div>
+                <div class="text mt-3 justify-content-center align-items-center">COMPANY<br><span>{{current_user.company}}</span></div>
                 {% endif %}
 
                 {% if profile.location == '' %}
                 <div class="text mt-3 justify-content-center align-items-center">LOCATION<br><span>Yet is no information about your current location</span></div>
                 {% else %}
-                <div class="text mt-3 justify-content-center align-items-center">LOCATION<br><span>{{profile.location}}</span></div>
+                <div class="text mt-3 justify-content-center align-items-center">LOCATION<br><span>{{current_user.location}}</span></div>
                 {% endif %}
 
                 {% if profile.website == '' %}
                 <div class="text mt-3 justify-content-center align-items-center">WEBSITE<br><span>Yet is no link to your website</span></div>
                 {% else %}
-                <div class="text mt-3 justify-content-center align-items-center">WEBSITE<br><span>{{profile.website}}</span></div>
+                <div class="text mt-3 justify-content-center align-items-center">WEBSITE<br><span>{{current_user.website}}</span></div>
                 {% endif %}
 
                 <div class="text mt-3 justify-content-center align-items-center"><a href="{{ url_for('edit_profile') }}">Edit Profile</a></div>

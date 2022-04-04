@@ -27,7 +27,8 @@ def posts():
 @app.route("/profile", methods=['GET'])
 @login_required
 def profile():
-    profile = User.query.first()
+    #profile = User.query.get_or_404(current_user(username)) #!!!!!!!!!?!!?!?!?!?!?!?!?!?!?!??!!?!?!?!?!?!
+    profile = User.query.filter_by(username=current_user.username).first()
     month = profile.date.month
     year = profile.date.year
     return render_template("profile.html", title="profile", current_user=current_user, profile=profile, month=month, year=year)

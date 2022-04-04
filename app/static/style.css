@@ -88,3 +88,20 @@ body {
     color: #545454;
     font-weight: 500
 }
+
+.edit {
+    height: 70px;
+    background-color: #1c1e21;
+    text-indent: 10px;
+    font-size: 15px;
+    color: #fff;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.edit:hover {
+    background-color: #25272a;
+    box-shadow: none;
+    border-color: #4f63e7
+}
